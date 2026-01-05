@@ -497,7 +497,7 @@ Minimum=1,Maximum=32}ab:Checkbox{IniFlag='MyCheckbox',Value=true}ab:InputText{
 IniFlag='MyInput',Value='Hello world!'}ab:Keybind{IniFlag='MyKeybind',Label=
 'Keybind (w/ Q & Left-Click blacklist)',KeyBlacklist={Enum.UserInputType.
 MouseButton1,Enum.KeyCode.Q}}local ae=aa:TabsWindow{Title='Tabs window!',Visible
-=false,Size=UDim2.fromOffset(300,200)}for af,ag in{'Avocado','Broccoli',
+=false,Size=UDim2.fromOffset(300,200)}ae.AnchorPoint=Vector2.new(0,1)ae.Position=UDim2.new(0,0,1,0)for af,ag in{'Avocado','Broccoli',
 'Cucumber'}do local ah=ae:CreateTab{Name=ag}ah:Label{Text=`This is the {ag} tab!`
 }end local af=aa.Elements:Label{Parent=aa.Container.Windows,Visible=false,
 UiPadding=UDim.new(0,8),CornerRadius=UDim.new(0,2),Position=UDim2.fromOffset(10,
@@ -1110,7 +1110,7 @@ MouseMove=true,MouseEnter=true,OnHoverChange=function(q)if q then table.insert(n
 .Visible=q end})end function aa:CheckFlags(g,h)for i,m in next,g do local n=h[i]
 if not n then continue end m(n)end end function aa:GetThemeKey(g,h)local i=self.
 ThemeConfigs if typeof(g)=='string'then g=i[g]end local m=i.DarkTheme g=g or m
-local n,o=g.BaseTheme,g.Values local p=o[h]if p then return p end if n then
+local n,o=g.BaseTheme,g.Values local p=o[h]if p then  end if n then
 return self:GetThemeKey(n,h)end return end function aa:SelectionGroup(g)local h,
 i,m=false,function(h,i)for m,n in next,g do if typeof(n)=='Instance'then
 continue end if n==i then continue end h(n)end end local n=function(n)if h then
